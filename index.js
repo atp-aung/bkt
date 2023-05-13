@@ -13,6 +13,7 @@ app.get("/", (request, response) => {
   response.send("<h1>Hello Persons!</h1>");
 });
 
+// main copy
 app.get("/api/persons/:id", (request, response, next) => {
   Person.findById(request.params.id)
     .then((p) => {

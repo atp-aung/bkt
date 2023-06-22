@@ -25,7 +25,6 @@ beforeEach(async () => {
 
 test("all persons are returned", async () => {
   const response = await api.get("/api/persons");
-
   expect(response.body).toHaveLength(initialPersons.length);
 });
 

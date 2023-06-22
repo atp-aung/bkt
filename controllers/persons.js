@@ -6,10 +6,12 @@ const Person = require("../models/person");
 //   response.send("<h1>Hello Persons!</h1>");
 // });
 
-personsRouter.get("/", (request, response) => {
-  Person.find({}).then((persons) => {
-    response.json(persons);
-  });
+personsRouter.get("/", async (request, response) => {
+  // Person.find({}).then((persons) => {
+  //   response.json(persons);
+  // });
+  const persons = await Person.find({});
+  response.json(persons);
 });
 
 personsRouter.get("/:id", (request, response, next) => {

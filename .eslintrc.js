@@ -5,7 +5,14 @@ module.exports = {
     node: true,
   },
   extends: ["eslint:recommended", "plugin:react/recommended"],
-  overrides: [],
+  overrides: [
+    {
+      files: ["**/personapi.test.js", "**/personapi.test.jsx"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
